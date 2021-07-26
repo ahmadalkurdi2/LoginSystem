@@ -1,0 +1,50 @@
+<% if(messages.error) { %> <%= messages.error %> <% } %>
+<!-- <h1>Login</h1> -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<div class="bg-img">
+    <div class="content">
+        <header>Login</header>
+
+        <form class="login-form" action="/login" method="post">
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <!-- <label for="email">Email</label> -->
+                <input type="email" name="email" id="email" placeholder="Enter Email" required />
+            </div>
+
+            <div class="field space">
+                <span class="fa fa-lock"></span>
+                <input type="password" name="password" class="password" id="password" placeholder="Enter Password" required />
+                <span class="show">SHOW</span>
+            </div>
+
+            <div class="field">
+                <input type="submit" value="LOGIN" />
+            </div>
+
+            <div class="signup">
+                Don't have account?
+                <a href="/register">Signup Now</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const passField = document.querySelector('.password');
+    const showBtn = document.querySelector('.show');
+
+    showBtn.addEventListener('click', function () {
+        if (passField.type === 'password') {
+            passField.type = 'text';
+            showBtn.style.color = '#3498db';
+            showBtn.textContent = 'HIDE';
+        } else {
+            passField.type = 'password';
+            showBtn.style.color = '#222';
+            showBtn.textContent = 'SHOW';
+        }
+    });
+</script>

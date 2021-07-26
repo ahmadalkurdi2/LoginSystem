@@ -1,0 +1,55 @@
+<!-- <h1>Register</h1> -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<div class="bg-img">
+    <div class="content">
+        <header>Register</header>
+        <form action="/register" method="post">
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <!-- <label for="name">Name</label> -->
+                <input type="text" name="name" id="name" placeholder="Enter full Name" required>
+            </div>
+
+            <div class="field space">
+                <span class="fas fa-envelope"></span>
+                <!-- <label for="email">Email</label> -->
+                <input type="email" name="email" id="email" placeholder="Enter Email" required>
+            </div>
+
+            <div class="field">
+                <!-- <label for="password">Password</label> -->
+                <span class="fa fa-lock"></span>
+                <input type="password" name="password" id="password" class="password" placeholder="Enter Password" required>
+                <span class="show">SHOW</span>
+            </div>
+            <div class="field">
+                <input type="submit" value="REGISTER" />
+            </div>
+
+            <div class="signup">
+                Already have account?
+                <a href="/login">Login Now</a>
+            </div>
+            <!-- <button type="submit">Register</button> -->
+        </form>
+    </div>
+</div>
+
+<script>
+    const passField = document.querySelector('.password');
+    const showBtn = document.querySelector('.show');
+
+    showBtn.addEventListener('click', function () {
+        if (passField.type === 'password') {
+            passField.type = 'text';
+            showBtn.style.color = '#3498db';
+            showBtn.textContent = 'HIDE';
+        } else {
+            passField.type = 'password';
+            showBtn.style.color = '#222';
+            showBtn.textContent = 'SHOW';
+        }
+    });
+</script>
